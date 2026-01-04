@@ -1,0 +1,99 @@
+{
+	"properties": [
+        {
+            "id":"prop1",
+			"type":"House",
+            "bedrooms":3,
+			"price":750000,
+			"tenure":"Freehold",
+			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
+			"picture":"/prop1.jpeg",
+			"url":"properties/prop1.html",
+            "added": {
+                "month":"October",
+                "day":12,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop2",
+			"type":"Flat",
+            "bedrooms":2,
+			"price":399995,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+			"location":"Crofton Road Orpington BR6",
+			"picture":"/prop1.jpeg",
+			"url":"properties/prop2.html",
+            "added": {
+                "month":"September",
+                "day":14,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop3",
+			"type":"House",
+            "bedrooms":4,
+			"price":950000,
+			"tenure":"Freehold",
+			"description":"A beautifully presented four bedroom detached family home located in a quiet cul-de-sac. This property features a spacious entrance hall, large living room with bay window, separate dining room, modern fitted kitchen with integrated appliances, and a utility room. Upstairs there are four good sized bedrooms, the master bedroom having an en-suite shower room, and a family bathroom. The property benefits from a private rear garden, off-street parking, and double garage. Gas central heating and double glazing throughout.",
+			"location":"Oak Avenue, Bromley BR2",
+			"picture":"images/prop3pic1small.jpg",
+			"url":"properties/prop3.html",
+            "added": {
+                "month":"November",
+                "day":5,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop4",
+			"type":"Flat",
+            "bedrooms":1,
+			"price":285000,
+			"tenure":"Leasehold",
+			"description":"Modern one bedroom apartment located on the second floor of a well maintained purpose built block. The property comprises an open plan living area with modern kitchen, double bedroom, and contemporary bathroom with shower over bath. The apartment benefits from double glazing, electric heating, and allocated parking space. Ideally located close to local shops, transport links, and amenities. Leasehold with approximately 95 years remaining.",
+			"location":"High Street, Beckenham BR3",
+			"picture":"images/prop4pic1small.jpg",
+			"url":"properties/prop4.html",
+            "added": {
+                "month":"August",
+                "day":22,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop5",
+			"type":"House",
+            "bedrooms":5,
+			"price":1250000,
+			"tenure":"Freehold",
+			"description":"Stunning five bedroom Victorian semi-detached property offering spacious family accommodation over three floors. Features include original period details, large reception rooms, modern kitchen/breakfast room, five double bedrooms, two bathrooms, and scope for further improvement. The property sits on a generous plot with mature rear garden, front garden, and driveway. Located in a popular residential area within walking distance of excellent schools and transport links.",
+			"location":"Church Road, Orpington BR6",
+			"picture":"images/prop5pic1small.jpg",
+			"url":"properties/prop5.html",
+            "added": {
+                "month":"December",
+                "day":10,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop6",
+			"type":"Flat",
+            "bedrooms":2,
+			"price":425000,
+			"tenure":"Leasehold",
+			"description":"Bright and spacious two bedroom second floor apartment in a modern development. The property features a large open plan living/dining room with modern fitted kitchen, two double bedrooms, family bathroom, and balcony. Benefits include allocated parking, lift access, double glazing, and electric heating. The development offers communal gardens and is located within easy reach of shops, restaurants, and excellent transport connections. Leasehold with approximately 98 years remaining.",
+			"location":"Station Road, Chislehurst BR7",
+			"picture":"images/prop6pic1small.jpg",
+			"url":"properties/prop6.html",
+            "added": {
+                "month":"October",
+                "day":28,
+                "year":2022
+            }
+        }
+]}
