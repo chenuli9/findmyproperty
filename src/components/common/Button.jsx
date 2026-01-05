@@ -1,4 +1,6 @@
-// Reusable Button component
+ /*
+ * Reusable Button component
+ */
 
 const Button = ({ 
   children, 
@@ -9,6 +11,7 @@ const Button = ({
   className = '',
   ...props 
 }) => {
+  // Dynamic class name construction: combines base, variant, and custom classes
   const baseClasses = 'btn';
   const variantClasses = `btn-${variant}`;
   const classes = `${baseClasses} ${variantClasses} ${className}`.trim();

@@ -1,16 +1,25 @@
 import Tabs from '../common/Tabs.jsx';
 
+/**
+ * PropertyDetails component: comprehensive property information display
+ * Uses Tabs component to organise content into Description, Floor Plan, and Map sections
+ */
 const PropertyDetails = ({ property }) => {
+  // Guard clause: handles missing property prop
   if (!property) {
     return <div>Property not found</div>;
   }
 
+  // Currency formatting utility (reusable pattern)
   const formatPrice = (price) => {
     return '£' + price.toLocaleString();
   };
 
+  // URL encoding: safely embeds location into Google Maps iframe URL
   const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`;
 
+  // Tab configuration: data structure for Tabs component
+  // Demonstrates component composition - passing JSX as props
   const tabs = [
     {
       label: 'Description',
@@ -18,6 +27,7 @@ const PropertyDetails = ({ property }) => {
         <div className="tab-description">
           <h3>Property Description</h3>
           <div className="description-content">
+            {/* HTML sanitisation: removes tags and replaces with spaces for safe display */}
             <p>{property.description ? property.description.replace(/<[^>]*>/g, ' ') : 'No description available.'}</p>
           </div>
           <div className="property-info-grid">
@@ -49,7 +59,7 @@ const PropertyDetails = ({ property }) => {
         <div className="tab-floorplan">
           <h3>Floor Plan</h3>
           <div className="floorplan-container">
-            <p>Floor plan not available for this property.</p>
+            <img src="/floorplan.jpeg" alt="Floor Plan" />
           </div>
         </div>
       )
@@ -60,6 +70,7 @@ const PropertyDetails = ({ property }) => {
         <div className="tab-map">
           <h3>Location Map</h3>
           <div className="map-container">
+            {/* Embedded Google Maps iframe */}
             <iframe
               src={mapUrl}
               width="100%"

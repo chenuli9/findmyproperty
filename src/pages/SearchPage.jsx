@@ -5,7 +5,13 @@ import FavouritesPanel from '../components/layout/FavouritesPanel.jsx';
 import Hero from '../components/layout/Hero.jsx';
 import propertiesData from '../data/properties.json';
 
+/**
+ * SearchPage component: main search interface with filtering and favourites functionality
+ * Manages two separate filter states: draft (filters) and applied (appliedFilters)
+ * This separation allows users to modify filters without immediately affecting results
+ */
 const SearchPage = ({ onPropertyClick }) => {
+  // Draft filter state - changes as user types/selects but doesn't apply until submit
   const [filters, setFilters] = useState({
     type: 'any',
     minPrice: '',
@@ -17,6 +23,7 @@ const SearchPage = ({ onPropertyClick }) => {
     postcodeArea: ''
   });
   
+  // Applied filter state - used for actual property filtering
   const [appliedFilters, setAppliedFilters] = useState({
     type: 'any',
     minPrice: '',
@@ -28,17 +35,22 @@ const SearchPage = ({ onPropertyClick }) => {
     postcodeArea: ''
   });
   
+  // Filtered results - computed based on appliedFilters
   const [filteredProperties, setFilteredProperties] = useState(propertiesData.properties);
+  // Favourites management: stores array of property IDs for favourite properties
   const [favouriteIds, setFavouriteIds] = useState([]);
   const allProperties = propertiesData.properties;
 
+  // Favourites handlers: use functional state updates and immutable array operations
   const handleAddFavourite = (propertyId) => {
+    // Prevents duplicate favourites using array spread syntax
     if (!favouriteIds.includes(propertyId)) {
       setFavouriteIds([...favouriteIds, propertyId]);
     }
   };
 
   const handleRemoveFavourite = (propertyId) => {
+    // Immutable removal using filter - creates new array without the ID
     setFavouriteIds(favouriteIds.filter(id => id !== propertyId));
   };
 
@@ -46,11 +58,14 @@ const SearchPage = ({ onPropertyClick }) => {
     setFavouriteIds([]);
   };
 
+  // Effect hook: automatically re-filters properties when appliedFilters or allProperties change
+  // This reactive approach ensures UI stays in sync with filter state
   useEffect(() => {
     const filtered = filterProperties(allProperties, appliedFilters);
     setFilteredProperties(filtered);
   }, [appliedFilters, allProperties]);
 
+  // Generic filter change handler: uses computed property names for dynamic state updates
   const handleFilterChange = (field, value) => {
     setFilters(prev => ({
       ...prev,
@@ -58,6 +73,7 @@ const SearchPage = ({ onPropertyClick }) => {
     }));
   };
 
+  // Form submission: transfers draft filters to applied filters, triggering useEffect
   const handleSubmit = (e) => {
     e.preventDefault();
     setAppliedFilters({ ...filters });

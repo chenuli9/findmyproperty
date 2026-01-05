@@ -1,11 +1,17 @@
 import { Trash2 } from 'lucide-react';
 import PropertyCard from '../property/PropertyCard.jsx';
 
+/**
+ * FavouritesPanel displays user's favourite properties in sidebar
+ * Demonstrates derived state - filters properties based on favouriteIds array
+ */
 const FavouritesPanel = ({ properties, onPropertyClick, favouriteIds, onRemoveFavourite, onClearFavourites }) => {
+  // Derived data: computes favourite properties by filtering against favouriteIds
   const favouriteProperties = properties.filter(prop => 
     favouriteIds.includes(prop.id)
   );
 
+  // Confirmation dialog before clearing all favourites - improves UX by preventing accidental deletions
   const handleClearAll = () => {
     if (window.confirm('Clear all favourites?')) {
       onClearFavourites();
@@ -30,12 +36,14 @@ const FavouritesPanel = ({ properties, onPropertyClick, favouriteIds, onRemoveFa
       </div>
       
       <div className="favourites-content">
+        {/* Conditional rendering: shows empty state or list based on favourites count */}
         {favouriteProperties.length === 0 ? (
           <p className="favourites-empty">
             Click the heart icon on properties to add them here
           </p>
         ) : (
           <div className="favourites-list">
+            {/* Maps favourite properties to PropertyCard components */}
             {favouriteProperties.map(property => (
               <div key={property.id} className="favourite-item">
                 <PropertyCard

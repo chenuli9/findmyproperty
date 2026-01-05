@@ -8,8 +8,9 @@ const PropertyCard = ({
   onRemoveFavourite,
   showRemoveButton = false
 }) => {
+  // Event handler with stopPropagation: prevents card click when toggling favourite
   const handleFavouriteClick = (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Critical: prevents event bubbling to card's onClick handler
     
     if (isFavourite) {
       if (onRemoveFavourite) {
@@ -22,10 +23,12 @@ const PropertyCard = ({
     }
   };
 
+  // Formatting utility: converts numeric price to locale-aware currency string
   const formatPrice = (price) => {
     return '£' + price.toLocaleString();
   };
 
+  // Text processing: truncates description and strips HTML tags using regex
   const shortDescription = property.description 
     ? property.description.substring(0, 100).replace(/<[^>]*>/g, '') + '...'
     : 'No description';

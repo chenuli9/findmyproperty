@@ -1,3 +1,6 @@
+/**
+ * Hero component: presentational banner component
+ */
 const Hero = () => {
   return (
     <div className="hero">
